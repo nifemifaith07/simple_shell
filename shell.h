@@ -27,6 +27,7 @@ int hist;
  * @dir: A directory path.
  * @next: A pointer to another struct list_s.
  */
+
 typedef struct list_s
 {
 	char *dir;
@@ -38,6 +39,7 @@ typedef struct list_s
  * @name: The name of the builtin command.
  * @f: A function pointer to the builtin command's function.
  */
+
 typedef struct builtin_s
 {
 	char *name;
@@ -50,6 +52,7 @@ typedef struct builtin_s
  * @value: The value of the alias.
  * @next: A pointer to another struct alias_s.
  */
+
 typedef struct alias_s
 {
 	char *name;
@@ -138,4 +141,5 @@ void help_history(void);
 
 /* file proccessor */
 int proc_file_commands(char *file_path, int *exe_ret);
+
 #endif /* _SHELL_H_ */
