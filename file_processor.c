@@ -64,12 +64,16 @@ int proc_file_commands(char *file_path, int *exe_ret)
 		return (*exe_ret);
 	}
 	line = malloc(sizeof(char) * old_size);
+	line[0] = '\0';
 	if (!line)
 		return (-1);
 	do {
 		b_read = read(file, buffer, 119);
 		if (b_read == 0 && line_size == 0)
+		{
+			free(line);
 			return (*exe_ret);
+		}
 		buffer[b_read] = '\0';
 		line_size += b_read;
 		line = _realloc(line, old_size, line_size);
